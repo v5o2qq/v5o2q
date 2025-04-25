@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر ماتريكس للاشتراكات الرقمية</title>
+
+    <!-- ربط مكتبة Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>متجر ماتريكس للاشتراكات الرقمية</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="register.html">إنشاء حساب جديد</a></li>
+                <li><a href="cart.html">سلة التسوق</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- قسم عرض المنتجات -->
+        <section class="cars">
+            <div class="car">
+                <img src="C:\Users\TechTroniX\Desktop\shopping1\img\Netflix.jpg" alt="اشتراك نتفلكس">
+                <h2>نتفلكس شهر</h2>
+                <p>اشتراك نتفلكس لمدة شهر</p>
+                <p>السعر: 89 ريال</p>
+                <button onclick="addToCart('نتفلكس', 89)">أضف إلى السلة</button>
+            </div>
+            <div class="car">
+                <img src="C:\Users\TechTroniX\Desktop\shopping1\img\shopping.webp" alt="لمدة 14 يوم game pass اشتراك">
+                <h2>اشتراك Game Pass</h2>
+                <p>اشتراك قيم باس لمدة 14 يوم</p>
+                <p>السعر: 49 ريال</p>
+                <button onclick="addToCart('Game Pass 14 يوم', 49)">أضف إلى السلة</button>
+            </div>
+        </section>
+
+        <!-- قسم سلة التسوق -->
+        <section class="cart">
+            <h2>سلة التسوق</h2>
+            <ul id="cart-items">
+                <!-- العناصر المضافة إلى السلة ستظهر هنا -->
+            </ul>
+            <p>المجموع: <span id="total">0</span> ريال</p>
+            <button id="checkout-button" style="display: none;" onclick="window.location.href='checkout.html'">إتمام الشراء</button>
+        </section>
+    </main>
+
+    <!-- أيقونة سلة التسوق -->
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+        <i class="fas fa-cart-plus"></i>  <!-- تم تغيير الأيقونة هنا -->
+        <span id="cart-count">0</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 متجر ماتريكس للاشتراكات الرقمية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

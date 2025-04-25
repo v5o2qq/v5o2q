@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الدفع</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>إتمام الدفع</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="cart.html">سلة التسوق</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout">
+            <h2>بيانات الدفع</h2>
+
+            <!-- نموذج الدفع -->
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="cardholder-name">اسم حامل البطاقة:</label>
+                    <input type="text" id="cardholder-name" name="cardholder-name" required placeholder="أدخل اسم حامل البطاقة">
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">رقم البطاقة:</label>
+                    <input type="text" id="card-number" name="card-number" required placeholder="أدخل رقم البطاقة" maxlength="16" pattern="\d{16}">
+                </div>
+
+                <div class="form-group">
+                    <label for="expiry-date">تاريخ الانتهاء (شهر/سنة):</label>
+                    <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY" maxlength="5" pattern="\d{2}/\d{2}">
+                </div>
+
+                <div class="form-group">
+                    <label for="cvv">رمز الأمان (CVV):</label>
+                    <input type="text" id="cvv" name="cvv" required placeholder="أدخل CVV" maxlength="3" pattern="\d{3}">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" id="submit-payment">إتمام الدفع</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 موقع لبيع المنتجات الرقمية. جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // دالة لإتمام الدفع
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إرسال النموذج الفعلي
+
+            // جمع بيانات البطاقة
+            const cardholderName = document.getElementById('cardholder-name').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // تحقق من صحة البيانات (تستطيع إضافة المزيد من التحقق هنا)
+            if (!cardholderName || !cardNumber || !expiryDate || !cvv) {
+                alert('يرجى ملء جميع الحقول.');
+                return;
+            }
+
+            // عرض رسالة تأكيد (أو إرسال البيانات إلى بوابة الدفع في الواقع)
+            alert('تم إرسال بيانات الدفع بنجاح!');
+        });
+    </script>
+</body>
+</html>

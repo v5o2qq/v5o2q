@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا</title>
+    <style>
+        body { font-family: Arial; direction: rtl; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        h2 { text-align: center; color: #333; }
+        .contact-info { list-style: none; padding: 0; }
+        .contact-info li { margin: 10px 0; font-size: 18px; }
+        label { font-size: 16px; margin-bottom: 5px; }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #007bff; color: white; padding: 12px 20px; width: 100%; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>اتصل بنا</h2>
+
+        <!-- بيانات التواصل -->
+        <h3>بيانات التواصل:</h3>
+        <ul class="contact-info">
+            <li>📞 رقم الجوال:0556276268</li>
+            <li>📧 البريد الإلكتروني: v5o2qw@gmail.com</li>
+            
+        </ul>
+
+        <!-- نموذج التواصل -->
+        <h3>نموذج التواصل:</h3>
+        <form id="contact-form" action="#" method="POST">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">الرسالة</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">إرسال الرسالة</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("تم إرسال رسالتك بنجاح! سنقوم بالرد عليك قريبًا.");
+            document.getElementById("contact-form").reset();
+        });
+    </script>
+
+</body>
+</html>
